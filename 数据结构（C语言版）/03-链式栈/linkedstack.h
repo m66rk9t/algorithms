@@ -8,12 +8,12 @@ typedef struct studentInfo
 {
     int id;
     struct studentInfo *next;
-} Node;
+} Node; //链式栈节点结构
 typedef struct linkedstack
 {
     Node *base; //指向栈底节点的指针
     Node *top;  //指向栈顶节点的指针
-} LinkedStack;
+} LinkedStack;  //链式栈结构
 
 /*函数原型*/
 /*操作：初始化栈*/
