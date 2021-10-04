@@ -1,0 +1,54 @@
+设单链表：H→x→y→x，H→x→y→z→y→x为对称形式（表长=n）。使用栈操作，写出判断表H是否对称的算法：xyz(H)。
+/*类型定义*/
+typedef int Elem;
+typedef struct sequencestack
+{
+    Elem *base;             //指向栈底元素
+    Elem *top;              //指向栈顶元素的下一个位置
+    unsigned int stacksize; //当前已分配的存储空间，以元素为单位
+} SeqStack;
+typedef struct linkedlist
+{
+    Elem elem;              //链表节点的数据域
+    struct linkedlist *next;//链表节点的指针域
+} Node, *LinkedList;
+/*单链表的操作*/
+unsigned int ListLength(LinkedList *pList);
+/*顺序栈的操作*/
+bool InitStack(SeqStack *pStack);
+bool Push(SeqStack *pStack, Elem *pElem);
+void DestoryStack(SeqStack *pStack);
+
+/*函数定义*/
+bool xyx(LinkedList *H)
+{ //H为指向单链表头节点指针的指针，解引用后为头节点的指针
+
+    SeqStack ss;         //声明一个顺序栈
+    Elem *pBase, *pTop;  //栈底栈顶指针
+    Node *pNode;         //指向链表节点的指针
+    unsigned int n = 0U; //链表长度
+    InitStack(&ss);      //初始化栈
+
+    pNode = (*H)->next; //指向链表H的头节点
+    n = ListLength(H);  //计算链表长度
+
+    while (pNode) //将链表中的节点数据插入栈中
+    {
+        Push(&ss, &(pNode->data)); //入栈
+        pNode = pNode->next;       //获取下一个节点
+    }
+
+    pBase = ss.base;   //指向栈底元素
+    pTop = ss.top - 1; //指向栈顶元素
+
+    for (int i = 0; i < n / 2; i++) //判断是否对称
+    {
+        if (*pBase++ == *pTop--)
+            continue;
+        else
+            return false;//不对称
+    }
+    DestoryStack(&ss); //销毁栈
+
+    return true;//对称
+}
