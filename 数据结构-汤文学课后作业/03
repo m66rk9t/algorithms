@@ -18,37 +18,38 @@ unsigned int ListLength(LinkedList *pList);
 bool InitStack(SeqStack *pStack);
 bool Push(SeqStack *pStack, Elem *pElem);
 void DestoryStack(SeqStack *pStack);
+bool Pop(SeqStack *pStack, Elem *pElem);
 
-/*函数定义*/
 bool xyx(LinkedList *H)
-{ //H为指向单链表头节点指针的指针，解引用后为头节点的指针
-
+{                        //H为指向单链表头节点指针的指针，解引用后为头节点的指针
     SeqStack ss;         //声明一个顺序栈
-    Elem *pBase, *pTop;  //栈底栈顶指针
+    Elem temp;           //栈元素，临时变量，储存出栈元素值
     Node *pNode;         //指向链表节点的指针
     unsigned int n = 0U; //链表长度
     InitStack(&ss);      //初始化栈
 
-    pNode = (*H)->next; //指向链表H的头节点
+    pNode = (*H)->next; //指向链表H的首节点
     n = ListLength(H);  //计算链表长度
 
-    while (pNode) //将链表中的节点数据插入栈中
+    for (int i = 0; i < n / 2; i++) //将链表前半部分节点的数据入栈
     {
         Push(&ss, &(pNode->data)); //入栈
         pNode = pNode->next;       //获取下一个节点
     }
 
-    pBase = ss.base;   //指向栈底元素
-    pTop = ss.top - 1; //指向栈顶元素
+    if (n % 2 != 0) //重置指针pNode
+        pNode = pNode->next;
 
-    for (int i = 0; i < n / 2; i++) //判断是否对称
+    while (pNode) //遍历链表剩余节点与出栈元素比较
     {
-        if (*pBase++ == *pTop--)
-            continue;
+        Pop(&ss, &temp); //出栈
+        if (temp == pNode->data)
+            pNode = pNode->next;
         else
-            return false;//不对称
+            return false;
     }
-    DestoryStack(&ss); //销毁栈
 
-    return true;//对称
+    DestoryStack(&ss);
+
+    return true;
 }
