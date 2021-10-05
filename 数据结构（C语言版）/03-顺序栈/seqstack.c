@@ -18,39 +18,18 @@ bool InitStack(SeqStack *pStack)
 
 bool DestoryStack(SeqStack *pStack)
 {
-    Elem *delElem; //储存待删元素的地址
-
-    if (StackIsNull(pStack)) //空栈情况
-        free(pStack->base);
-    else
-    {
-        ClearStack(pStack); //清空栈
-        free(pStack->base); //释放栈底元素
-    }
-
-    /*
-    ClearStack(pStack);//清栈，即使是空栈也不会影响销栈操作
-    free(pStack->base);//释放栈底元素
-    */
+    if (!pStack->base && !pStack->top) //判断栈是否已被销毁
+        return false;                  //已销栈，销栈失败
+    free(pStack->base);                //释放栈占用的内存空间
+    pStack->base = pStack->top = NULL; //重置栈底和栈顶指针为NULL，作为已销栈的标志
 
     return true; //销栈成功
-}
-bool ClearStack(SeqStack *pStack)
-{
-    Elem *delElem;
-
-    if (StackIsNull(pStack))
-        return false; //空栈无法清空
-    else
-        while ((delElem = --(pStack->top)) > pStack->base) //清栈
-            free(delElem);
-
-    return true; //清栈成功
 }
 
 bool StackIsNull(SeqStack *pStack)
 {
-    if (pStack->base == pStack->top)
+    /*栈底栈顶指针指向同一位置且均不为NULL*/
+    if ((pStack->base == pStack->top)&&pStack->base&&pStack->top)
         return true; //空栈
     else
         return false; //栈不为空
@@ -66,6 +45,11 @@ bool StackIsFull(SeqStack *pStack)
 
 unsigned int StackLength(SeqStack *pStack)
 {
+    if (!pStack->base && !pStack->top) //判断栈是否已被销毁
+    {
+        fprintf(stderr, "Stack has been destoryed.\n");
+        exit(EXIT_FAILURE);
+    }
     return (pStack->top - pStack->base); //返回元素数量
 }
 
@@ -86,22 +70,19 @@ bool Push(SeqStack *pStack, Elem *pElem)
 
 bool Pop(SeqStack *pStack, Elem *pElem)
 {
-    Elem *delElem = pStack->top - 1; //指向栈顶元素
+    if (StackIsNull(pStack))//空栈无法出栈
+        return false;
 
-    if (StackIsNull(pStack))
-        return false; //栈空，无法出栈
-
-    CopyDataToElem(pElem, delElem); //拷贝数据
-    pStack->top--;                  //重置栈顶指针
-    free(delElem);                  //释放栈顶元素
+    CopyDataToElem(pElem, pStack->top - 1); //拷贝栈顶元素数据
+    pStack->top--;                          //重置栈顶指针
 
     return true; //出栈成功
 }
 
 bool GetTop(SeqStack *pStack, Elem *pElem)
 {
-    if (StackIsNull(pStack))
-        return false; //空栈无法取栈顶元素
+    if (StackIsNull(pStack))//空栈无法读取栈顶元素
+        return false;
 
     CopyDataToElem(pElem, pStack->top - 1); //拷贝栈顶元素数据
 
