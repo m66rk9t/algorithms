@@ -28,7 +28,7 @@ bool DestoryStack(SeqStack *pStack);
 /*前置条件：pStack指向的栈不为空*/
 /*后置条件：清空pStack指向的栈，将其设为空栈*/
 /*        清空成功则返回true，否则返回false*/
-// bool ClearStack(SeqStack *pStack);
+bool ClearStack(SeqStack *pStack);
 /*操作：判断栈是否为空*/
 /*前置条件：pStack指向一个已初始化的栈*/
 /*后置条件：pStack指向的栈若为空则返回true，否则返回false*/
