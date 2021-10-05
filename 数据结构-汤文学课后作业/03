@@ -21,7 +21,7 @@ void DestoryStack(SeqStack *pStack);
 bool Pop(SeqStack *pStack, Elem *pElem);
 
 bool xyx(LinkedList *H)
-{                        //H为指向单链表头节点指针的指针，解引用后为头节点的指针
+{ //H为指向单链表头节点指针的指针，解引用后为头节点的指针
     SeqStack ss;         //声明一个顺序栈
     Elem temp;           //栈元素，临时变量，储存出栈元素值
     Node *pNode;         //指向链表节点的指针
@@ -42,14 +42,14 @@ bool xyx(LinkedList *H)
 
     while (pNode) //遍历链表剩余节点与出栈元素比较
     {
-        Pop(&ss, &temp); //出栈
-        if (temp == pNode->data)
-            pNode = pNode->next;
+        Pop(&ss, &temp);         //出栈
+        if (temp == pNode->data) //比较
+            pNode = pNode->next; //获取下一个节点
         else
-            return false;
+            return false; //非对称
     }
 
-    DestoryStack(&ss);
+    DestoryStack(&ss); //销栈
 
-    return true;
+    return true; //对称
 }
