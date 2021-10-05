@@ -1,4 +1,4 @@
-/*顺序栈测试-十进制转换成二进制*/
+/*顺序栈测试--十进制转换成二进制*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -26,29 +26,18 @@ int main(void)
         input = input / 2;
     }
 
-    //出栈一个元素
-    Pop(&ss, &reminder);
-    printf("%d\n", reminder);
-    printf("%u\n", StackLength(&ss));
-
     //出栈
-    // printf("%d to binary:", temp);
-    // pElem = ss.top;
-    // while (--pElem >= ss.base)
-    // {
-    //     Pop(&ss, &reminder);
-    //     printf("%d", reminder);
-    // }
-    // putchar('\n');
+     printf("%d to binary:", temp);
+     pElem = ss.top;
+     while (--pElem >= ss.base)
+     {
+         Pop(&ss, &reminder);
+         printf("%d", reminder);
+     }
+     putchar('\n');
 
-    // 销毁
-    if (DestoryStack(&ss))
-        printf("Destoryed successfully.\n");
-    if (!DestoryStack(&ss))
-        printf("Stack has been destoryed.\n");
-    if (StackIsNull(&ss))
-        printf("Empty.\n");
-    
+    //销栈
+    DestoryStack(&ss);
 
     return 0;
 }
