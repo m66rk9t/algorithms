@@ -6,13 +6,13 @@
 #define APPENSIZE 5
 
 /*类型定义*/
-typedef int Elem;
+typedef int Elem; //栈中元素的类型
 typedef struct sequencestack
 {
     Elem *base;             //指向栈底元素
-    Elem *top;              //指向栈顶元素的下一个为至
+    Elem *top;              //指向栈顶元素的下一个fa
     unsigned int stacksize; //当前已分配的存储空间，以元素为单位
-} SeqStack;
+} SeqStack;                 //栈结构
 
 /*函数原型*/
 /*操作：初始化栈*/
@@ -22,13 +22,13 @@ typedef struct sequencestack
 bool InitStack(SeqStack *pStack);
 /*操作：销毁栈*/
 /*前置条件：pStack指向一个栈*/
-/*后置条件：销毁pStack指向的栈*/
-void DestoryStack(SeqStack *pStack);
+/*后置条件：销毁pStack指向的栈并返回true*/
+bool DestoryStack(SeqStack *pStack);
 /*操作：清空栈*/
 /*前置条件：pStack指向的栈不为空*/
 /*后置条件：清空pStack指向的栈，将其设为空栈*/
 /*        清空成功则返回true，否则返回false*/
-bool ClearStack(SeqStack *pStack);
+// bool ClearStack(SeqStack *pStack);
 /*操作：判断栈是否为空*/
 /*前置条件：pStack指向一个已初始化的栈*/
 /*后置条件：pStack指向的栈若为空则返回true，否则返回false*/
@@ -48,7 +48,7 @@ bool Push(SeqStack *pStack, Elem *pElem);
 /*操作：出栈*/
 /*前置条件：pStack指向一个已初始化且不为空的栈*/
 /*后置条件：出栈成功则返回true，否则返回false*/
-bool Pop(SeqStack *pStack);
+bool Pop(SeqStack *pStack, Elem *pElem);
 /*操作：读取栈顶元素数据*/
 /*前置条件：pStack指向一个已初始化且不为空的栈*/
 /*后置条件：将pStack指向的栈顶元素的数据拷贝至pElem指向内存中*/
