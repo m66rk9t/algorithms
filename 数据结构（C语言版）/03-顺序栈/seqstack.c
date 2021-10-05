@@ -1,42 +1,38 @@
-/*顺序栈实现*/
+/*顺序栈的实现*/
 #include <stdio.h>
-#include <stdbool.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "seqstack.h"
 
+/*函数定义*/
 bool InitStack(SeqStack *pStack)
 {
-    if (!StackIsNull(pStack))
-        DestoryStack(pStack);
-    pStack->base = (Elem *)malloc(INITSIZE * sizeof(Elem));
-    if (!pStack->base)
+    pStack->base = (Elem *)malloc(INITSIZE * sizeof(Elem)); //为栈分配存储空间
+    if (pStack->base == NULL)                               //分配存储空间失败，初始化失败
         return false;
-    pStack->top = pStack->base;
-    pStack->stacksize = INITSIZE;
+    pStack->top = pStack->base;   //设置栈底和栈顶指针，将栈设置为空栈
+    pStack->stacksize = INITSIZE; //设置栈的容量
 
-    return true;
+    return true; //初始化成功
 }
 
-void DestoryStack(SeqStack *pStack)
+bool DestoryStack(SeqStack *pStack)
 {
-    free(pStack->base);
-    pStack->base = NULL;
-}
+    Elem *delElem; //储存待删元素的地址
 
-bool ClearStack(SeqStack *pStack)
-{
-    Elem *pDelElem, *pNextElem;
+    if (pStack->base == pStack->top) //空栈情况
+        free(pStack->base);
+    else
+        while ((delElem = --(pStack->top)) >= pStack->base)
+            free(delElem);
 
-    if (StackIsNull(pStack))
-        return false;
-
-    pNextElem = pStack->top - 1;
-
-    while (pNextElem >= pStack->base)
-    {
-        pDelElem = pNextElem--;
-        free(pDelElem);
-    }
+    /*
+    if (pStack->base == pStack->top)
+        free(pStack->base);
+    else
+        while((pStack->top)-- >= pStack->base)
+            free(pStack->top);
+    */
 
     return true;
 }
@@ -44,79 +40,16 @@ bool ClearStack(SeqStack *pStack)
 bool StackIsNull(SeqStack *pStack)
 {
     if (pStack->base == pStack->top)
-        return true;
+        return true; //空栈
     else
-        return false;
+        return false; //栈不为空
 }
 
 bool StackIsFull(SeqStack *pStack)
 {
-    if (StackLength(pStack) == pStack->stacksize)
-        return true;
-    else
-        return false;
-}
+    if (StackLength(&ss))}
 
 unsigned int StackLength(SeqStack *pStack)
 {
-    return pStack->top - pStack->base;
-}
-
-bool Push(SeqStack *pStack, Elem *pElem)
-{
-    if (StackIsFull(pStack))
-    {
-        pStack->base = (Elem *)realloc(pStack->base,
-                                       (pStack->stacksize + APPENSIZE) * sizeof(Elem));
-        if (!pStack->base)
-            return false;
-        pStack->stacksize += APPENSIZE;
-        pStack->top = pStack->base + pStack->stacksize - 1;
-    }
-    CopyDataToElem(pStack->top, pElem);
-    pStack->top++;
-
-    return true;
-}
-
-bool Pop(SeqStack *pStack)
-{
-    Elem *pDelElem;
-    if (StackIsNull(pStack))
-        return false;
-    pDelElem = pStack->top - 1;
-    pStack->top--;
-    free(pDelElem);
-
-    return true;
-}
-
-bool GetTop(SeqStack *pStack, Elem *pElem)
-{
-    if (StackIsNull(pStack))
-        return false;
-    CopyDataToElem(pElem, pStack->top - 1);
-
-    return true;
-}
-
-void PrintElemData(Elem *pElem)
-{
-    printf("Elem:%d\n", *pElem);
-}
-
-void StackTraverse(SeqStack *pStack, void (*pFun)(Elem *))
-{
-    Elem *pElem = pStack->top - 1;
-
-    while (pElem >= pStack->base)
-    {
-        (*pFun)(pElem);
-        pElem--;
-    }
-}
-
-void CopyDataToElem(Elem *tar, Elem *src)
-{
-    *tar = *src;
+    return (pStack->top - pStack->base) / sizeof(Elem);
 }
