@@ -14,7 +14,7 @@
 
 #### 05 设矩阵 
 
-<img src="https://latex.codecogs.com/svg.image?A=\begin{Bmatrix}1&0&0&0&2\\0&3&0&0&4\\0&0&0&5&0\\0&0&0&6&0\\0&0&0&0&7\\\end{Bmatrix}" title="A=\begin{Bmatrix}1&0&0&0&2\\0&3&0&0&4\\0&0&0&5&0\\0&0&0&6&0\\0&0&0&0&7\\\end{Bmatrix}" />
+<img src="https://latex.codecogs.com/svg.image?A=\begin{Bmatrix}1&0&0&0&2\\0&3&0&0&4\\0&0&0&5&0\\0&0&0&6&0\\0&0&0&0&7\\\end{Bmatrix}(1<=i,j<=5)" title="A=\begin{Bmatrix}1&0&0&0&2\\0&3&0&0&4\\0&0&0&5&0\\0&0&0&6&0\\0&0&0&0&7\\\end{Bmatrix}(1<=i,j<=5)" />
 
 + 若将A视为一个上三角矩阵时，请画出A的按行优先存储的压缩存储表S，并写出A中元素`A[i][j]`与S中元素`S[k]`之间的关系。
 + 若将A视为一个稀疏矩阵时，请画出A的三元组表和十字链表结构。
