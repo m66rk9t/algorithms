@@ -127,4 +127,9 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/1.png)
 
-#### 06
+#### 06 设银行一天营业业务表头H：
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/02.png)
+
++ 试用广义表形式表示H，并用Gethead()和Gettail()函数提取d2。
++ 画出表H的单链以及双链结构。
