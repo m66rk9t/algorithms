@@ -38,11 +38,7 @@ int main(void)
     Traverse(&List, PrintNodeData);
 
     /*销毁表*/
-    if (DestoryList(&List))
-    {
-        printf("\nLinked list successfully destoryed!\n");
-    }
-    puts("Done!");
+    DestoryList(&List);
 
     return 0;
 }
