@@ -5,8 +5,7 @@
 
 /*类型定义*/
 typedef int Data;//将int类型定义为Data类型
-typedef struct studentID
-{
+typedef struct studentID{
     Data id;
     struct studentID *next;//指向struct studentID结构的指针
 } Node;//将struct studentID结构类型定义为Node类型
