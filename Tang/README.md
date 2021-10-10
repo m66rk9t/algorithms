@@ -140,7 +140,7 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 取表H中的d2：
 由Gethead((d2, d3)) = d2, Gettail(D) = (d2, d3), Gethead((D, a3)) = D, Gettail(A) = (D, a3), Gethead(H) = A
-可得 Gethead(Gettail(Gethead(Gettail(Gethead(H))))) = d2
+可得Gethead(Gettail(Gethead(Gettail(Gethead(H))))) = d2
 ```
 
 + 画出表H的单链以及双链结构。
