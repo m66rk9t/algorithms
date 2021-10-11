@@ -147,4 +147,4 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0301.png)
 
-![image]()
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0302.png)
