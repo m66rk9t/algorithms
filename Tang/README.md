@@ -144,3 +144,7 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 ```
 
 + 画出表H的单链以及双链结构。
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0301.png)
+
+![image]()
