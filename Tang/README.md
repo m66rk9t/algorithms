@@ -125,7 +125,7 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 |4|4|6|
 |5|5|7|
 
-![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/1.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/01.png)
 
 #### 06 设银行一天营业业务表头H：
 
