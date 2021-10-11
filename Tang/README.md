@@ -131,7 +131,7 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/02.png)
 
-+ 试用广义表形式表示H，并用Gethead()和Gettail()函数提取d2。
++ 试用广义表形式表示H，并用`Gethead()`和`Gettail()`函数提取d2。
 
 ```
 广义表形式表示H：
