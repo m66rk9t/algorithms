@@ -107,29 +107,19 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 + 若将A视为一个上三角矩阵时，请画出A的按行优先存储的压缩存储表S，并写出A中元素`A[i][j]`与S中元素`S[k]`之间的关系。
 
-|S|0|`A[1][1]`|`A[1][2]`|....|`A[i][j]`|...|`A[5][5]`|
-|-|-|-|-|-|-|-|-|
-|k=|0|1|2|...|(i-1)(10-i)/2 + j|...|15|
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/01.png)
 
 `k = (i-1)(10-i)/2 + j (i<=j&&i>=1&&i<=5&&j>=1&&j<=5)`
 
 + 若将A视为一个稀疏矩阵时，请画出A的三元组表和十字链表结构。
 
-|row|col|val|
-|-|-|-|
-|1|1|1|
-|1|5|2|
-|2|2|3|
-|2|5|4|
-|3|4|5|
-|4|4|6|
-|5|5|7|
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/02.png)
 
-![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/01.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/03.png)
 
 #### 06 设银行一天营业业务表头H：
 
-![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/02.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/04.png)
 
 + 试用广义表形式表示H，并用`Gethead()`和`Gettail()`函数提取d2。
 
@@ -145,6 +135,6 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 + 画出表H的单链以及双链结构。
 
-![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0301.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0501.png)
 
-![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0302.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0502.png)
