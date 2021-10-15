@@ -153,6 +153,12 @@ LRD(后序遍历)：(52,42,15,81,36,21,88,31,45,63,74,52)
 
 + 画出BT的先、中、后序线索二叉树。
 
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0602.png)
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0603.png)
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0604.png)
+
 #### 08 设某二叉树的先、中、后序遍历序列为以下结果，请根据此画出二叉树的逻辑结构。
 
 ```
