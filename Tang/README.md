@@ -138,3 +138,26 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0501.png)
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0502.png)
+
+#### 07 已知二叉树BT如下：
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0601.png)
+
++ 写出按先序、中序、后序遍历方法对BT遍历的结果。
+
+```
+DLR(先序遍历)：(25,36,52,81,15,42,74,63,21,45,31,88)
+LDR(中序遍历)：(52,36,15,42,81,25,74,21,63,31,88,45)
+LRD(后序遍历)：(52,42,15,81,36,21,88,31,45,63,74,52)
+```
+
++ 画出BT的先、中、后序线索二叉树。
+
+#### 08 设某二叉树的先、中、后序遍历序列为以下结果，请根据此画出二叉树的逻辑结构。
+
+```
+DLR: (A,B,C,D,E,F,G,H)
+LDR: (B,D,C,A,E,G,F,H)
+```
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/07.png)
