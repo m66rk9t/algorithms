@@ -197,5 +197,8 @@ LOC(A[8,5]) = SA + [(8 - 1) X 10 + (5 - 1)] X 3
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/09.png)
 
 ```
-WPL = 
+WPL = 19 * 2 + 21 * 2 + 2 * 5 + 3 * 5 + 6 * 4 + 7 * 4 + 10 * 4 + 32 * 2
+    = 38 + 42 + 10 + 15 + 24 + 28 + 40 + 64
+    = 261
+该树的WPL为261。
 ```
