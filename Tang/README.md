@@ -91,7 +91,7 @@ bool xyz(LinkedList *H)
 
 #### 04 FORTRAN语言中，数组元素按列优先存储，设每个元素占L个单元，首元素的地址为b，如有以下三个数组，试分别确定三个数组中某一元素的地址：`LOC(A[i])`，`LOC(A[i][j])`，`LOC(A[i][j][k])`。
 
-+ `A[n] =(A[1]...A[n])`
++ `A[n] = (A[1]...A[n])`
 + `A[m][n](m行n列)`
 + `A[m][n][p]`
 
@@ -181,4 +181,21 @@ LOC(A[8,5]) = SA + [(8 - 1) X 10 + (5 - 1)] X 3
             = SA + 74 X 3
             = SA + 222
 即A[8,5]的起始地址为SA+222。
+```
+
+#### 10 森林与二叉树的转换。
++ 将如下的森林F = {T1, T2, T3}转换成二叉树BT。
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0801.png)
+
++ 将如下的二叉树BT转换成森林F。
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0802.png)
+
+#### 11 设加权集合W = {7, 19, 2, 6, 32, 3, 21, 10}，试构造关于W的一个Huffman树，并求该树的WPL。
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/09.png)
+
+```
+WPL = 
 ```
