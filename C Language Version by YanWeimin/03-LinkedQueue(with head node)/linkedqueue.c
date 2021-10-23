@@ -22,7 +22,7 @@ bool InitQueue(LinkedQueue *lq)
     return true;
 }
 
-void DstoryQueue(LinkedQueue *lq)
+void DestoryQueue(LinkedQueue *lq)
 {
     QueueNode *freeNode, *nextNode;
 
