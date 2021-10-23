@@ -33,7 +33,7 @@ void DestoryQueue(LinkedQueue *lq)
     nextNode = freeNode->next;
 
     while (nextNode)
-    {
+    {   
         free(freeNode);
         freeNode = nextNode;
         nextNode = nextNode->next;
