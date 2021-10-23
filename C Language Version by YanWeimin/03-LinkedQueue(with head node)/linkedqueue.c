@@ -28,18 +28,14 @@ bool DestoryQueue(LinkedQueue *lq)
 
     if (!QueueStatus)
         Error(QueueStatus);
-    
-    if (QueueIsEmpty(lq))
-        return false;
 
     freeNode = lq->head;
-    nextNode = freeNode->next;
 
-    while (nextNode)
+    while (freeNode)
     {   
+        nextNode = freeNode->next;
         free(freeNode);
         freeNode = nextNode;
-        nextNode = nextNode->next;
     }
 }
 
