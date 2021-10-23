@@ -26,7 +26,7 @@ bool InitQueue(LinkedQueue *lq);
 /*操作：销毁队列*/
 /*前置条件：lq指向一个已初始化的队列*/
 /*后置条件：释放lq指向的队列使用的存储空间*/
-void DstoryQueue(LinkedQueue *lq);
+void DestoryQueue(LinkedQueue *lq);
 /*操作：判断队列是否为空*/
 /*前置条件：lq指向一个已初始化的队列*/
 /*后置条件：lq指向的队列为空返回ture，否则返回false*/
