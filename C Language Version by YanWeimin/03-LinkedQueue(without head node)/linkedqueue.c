@@ -16,22 +16,24 @@ bool InitQueue(LinkedQueue *lq)
     return true;
 }
 
-void DstoryQueue(LinkedQueue *lq)
+bool DestoryQueue(LinkedQueue *lq)
 {
-    QueueNode *freeNode, *nextNode;
+    QueueNode *nextNode;
 
     if (!QueueStatus)
         Error(QueueStatus);
 
-    freeNode = lq->head;
-    nextNode = freeNode->next;
+    if (QueueIsEmpty(lq))
+        return false;
 
-    while (nextNode)
+    while (lq->head != NULL)
     {
-        free(freeNode);
-        freeNode = nextNode;
-        nextNode = nextNode->next;
+        nextNode = lq->head->next;
+        free(lq->head);
+        lq->head = nextNode;
     }
+
+    return true;
 }
 
 bool QueueIsEmpty(LinkedQueue *lq)
