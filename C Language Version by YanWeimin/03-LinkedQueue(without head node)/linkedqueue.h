@@ -35,10 +35,6 @@ bool QueueIsEmpty(LinkedQueue *lq);
 /*前置条件：lq指向一个已初始化的队列*/
 /*后置条件：lq指向的队列已满返回true，否则返回false*/
 bool QueueIsFull(LinkedQueue *lq);
-/*操作：清空队列*/
-/*前置条件：lq指向一个已初始化且不为空的队列*/
-/*后置条件：清空lq指向的队列，清空成功返回true，否则返回false*/
-bool ClearQueue(LinkedQueue *lq);
 /*操作：计算队列长度*/
 /*前置条件：lq指向一个已初始化的队列*/
 /*后置条件：返回lq指向的队列的长度*/
