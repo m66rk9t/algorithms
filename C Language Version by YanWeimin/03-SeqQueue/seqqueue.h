@@ -11,7 +11,7 @@ typedef struct seqqueue
 {
     QElem *base; //指向动态分配内存
     int head;    //指向队头
-    int tail;    //指向队尾
+    int tail;    //指向队尾的下一个位置
     int maxqsize;//队列大小
 } SeqQueue;      //队列结构
 
