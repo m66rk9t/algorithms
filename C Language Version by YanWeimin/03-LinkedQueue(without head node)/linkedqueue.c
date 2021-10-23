@@ -60,25 +60,6 @@ bool QueueIsFull(LinkedQueue *lq)
         return false;
 }
 
-bool ClearQueue(LinkedQueue *lq)
-{
-    QueueNode *freeNode, *nextNode;
-
-    if (!QueueStatus)
-        Error(QueueStatus);
-
-    freeNode = lq->head;
-    nextNode = freeNode->next;
-    lq->tail = lq->head = NULL;
-
-    while (nextNode)
-    {
-        free(freeNode);
-        freeNode = nextNode;
-        nextNode = nextNode->next;
-    }
-}
-
 unsigned int QueueLength(LinkedQueue *lq)
 {
     unsigned int length = 0U;
