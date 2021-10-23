@@ -24,19 +24,16 @@ bool InitQueue(LinkedQueue *lq)
 
 void DestoryQueue(LinkedQueue *lq)
 {
-    QueueNode *freeNode, *nextNode;
+    QueueNode *nextNode;
 
     if (!QueueStatus)
         Error(QueueStatus);
 
-    freeNode = lq->head;
-    nextNode = freeNode->next;
-
-    while (nextNode)
+    while (lq->head)
     {
-        free(freeNode);
-        freeNode = nextNode;
-        nextNode = nextNode->next;
+        nextNode = lq->head->next;
+        free(lq->head);
+        lq->head = nextNode;
     }
 }
 
