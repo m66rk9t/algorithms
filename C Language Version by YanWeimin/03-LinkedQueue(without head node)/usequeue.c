@@ -40,7 +40,8 @@ int main(void)
     DeQueue(&lq, &qn);
     printf("\nThe last one's order:%-2d\n", qn.data);
 
-    DstoryQueue(&lq);
+    ClearQueue(&lq);
+    printf("%u\n", QueueLength(&lq));
 
     return 0;
 }
