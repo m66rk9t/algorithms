@@ -17,7 +17,7 @@ typedef struct seqqueue
 
 /*函数原型*/
 /*操作：初始化队列*/
-/*前置条件：sq指向一个未初始化且不为空的队列*/
+/*前置条件：sq指向一个未初始化的队列*/
 /*后置条件：将sq指向的队列初始化为空队列*/
 /*         初始化成功返回true，否则返回false*/
 bool InitQueue(SeqQueue *sq);
