@@ -13,6 +13,7 @@ int main(void)
 {
     LinkedQueue lq;
     QueueNode qn;
+
     int count = 1;
 
     qn.data = 1;
