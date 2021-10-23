@@ -14,7 +14,6 @@ int main(void)
     LinkedQueue lq;
     QueueNode qn;
     int count = 1;
-    int index = 0;
 
     qn.data = 1;
     
