@@ -160,16 +160,37 @@ LRD(后序遍历):(52, 42, 15, 81, 36, 21, 88, 31, 45, 63, 74, 52)
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0604.png)
 
-#### 08 设某二叉树的先、中、后序遍历序列为以下结果，请根据此画出二叉树的逻辑结构。
+#### 08 若后序线索二叉树中某p节点存在右子树，写出求p之右子树在后序下第一节点指针的算法（实线为指针，虚线为线索）
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/07.png)
+
+```c
+/*函数调用*/
+rfirstnode = GetLRDFirst(p->RChild);
+/*函数定义*/
+BTptr GetLRDFirst(BTptr p)
+{
+    BTptr firstnode;
+
+    if (p->LChild)  firstnode = GetLRDFirst(p->LChild);
+    else if (p->RChild)  firstnode = GetLRDFirst(p->RChild);
+    else firstnode = p;
+
+    return firstnode;
+}
+```
+
+
+#### 09 设某二叉树的先、中、后序遍历序列为以下结果，请根据此画出二叉树的逻辑结构。
 
 ```
 DLR:(A,B,C,D,E,F,G,H)
 LDR:(B,D,C,A,E,G,F,H)
 ```
 
-![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/07.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/08.png)
 
-#### 09 二位数组A的元素都是3个字符组成的串。行下标i的范围从1到18，列下标j的范围从1到10。从首地址SA开始连续存放在存储器内。当该数组按行优先方式存储时，元素`A[8,5]`的起始地址是多少？
+#### 10 二位数组A的元素都是3个字符组成的串。行下标i的范围从1到18，列下标j的范围从1到10。从首地址SA开始连续存放在存储器内。当该数组按行优先方式存储时，元素`A[8,5]`的起始地址是多少？
 
 ```
 由题可知：
@@ -184,18 +205,18 @@ LOC(A[8,5]) = SA + [(8 - 1) X 10 + (5 - 1)] X 3
 即A[8,5]的起始地址为SA+222。
 ```
 
-#### 10 森林与二叉树的转换。
+#### 11 森林与二叉树的转换。
 + 将如下的森林F = {T1, T2, T3}转换成二叉树BT。
 
-![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0801.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0901.png)
 
 + 将如下的二叉树BT转换成森林F。
 
-![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0802.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0902.png)
 
-#### 11 设加权集合W = {7, 19, 2, 6, 32, 3, 21, 10}，试构造关于W的一个Huffman树，并求该树的WPL。
+#### 12 设加权集合W = {7, 19, 2, 6, 32, 3, 21, 10}，试构造关于W的一个Huffman树，并求该树的WPL。
 
-![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/09.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/10.png)
 
 ```
 WPL = 19 * 2 + 21 * 2 + 2 * 5 + 3 * 5 + 6 * 4 + 7 * 4 + 10 * 4 + 32 * 2
