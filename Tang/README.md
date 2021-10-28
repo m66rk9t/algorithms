@@ -233,6 +233,11 @@ WPL = 19 * 2 + 21 * 2 + 2 * 5 + 3 * 5 + 6 * 4 + 7 * 4 + 10 * 4 + 32 * 2
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/12.png)
 
+```
+DFS = (V0, V1, V3, V7, V4, V5, V2, V6)
+BFS = (V0, V1, V4, V2, V3, V7, V5, V6)
+```
+
 #### 15 设无向网G3，画出从顶点a出发，按Prim算法产生的一颗最小生成树。
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/13.png)
