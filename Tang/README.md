@@ -227,10 +227,20 @@ WPL = 19 * 2 + 21 * 2 + 2 * 5 + 3 * 5 + 6 * 4 + 7 * 4 + 10 * 4 + 32 * 2
 
 #### 13 设有向图G1，试构造G1的邻接矩阵、邻接表和十字链表结构。
 
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/11.png)
+
 #### 14 设无向图G2，写出从顶点V0出发，按DFS和BFS方法遍历G2所得到的顶点序列。
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/12.png)
 
 #### 15 设无向网G3，画出从顶点a出发，按Prim算法产生的一颗最小生成树。
 
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/13.png)
+
 #### 16 设有向网G4，用Floyd算法求出G4中任意两点间最短路径长度的矩阵，即：D<sub>-1</sub>, D<sub>0</sub>, D<sub>1</sub>, D<sub>2</sub>, D<sub>3</sub>, D<sub>4</sub>, D<sub>5</sub>, = ?。
 
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/14.png)
+
 #### 17 设有向图G5，写出G5的所有拓扑序列。
+
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/15.png)
