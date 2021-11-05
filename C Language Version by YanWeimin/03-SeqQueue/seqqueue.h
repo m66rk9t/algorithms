@@ -5,8 +5,8 @@
 #include <stdbool.h>
 
 /*顺序存储结构定义*/
-typedef int QElem;  //队列元素
-#define MAXQSIZE 11 //队列大小
+typedef int QElem;   //队列元素
+#define INITQSIZE 11 //队列大小，少用一个元素空间
 typedef struct seqqueue
 {
     QElem *base;  //指向动态分配内存
