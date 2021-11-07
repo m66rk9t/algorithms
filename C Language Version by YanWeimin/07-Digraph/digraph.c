@@ -48,15 +48,13 @@ bool CreateGraph(Digraph *dg)
     return true;
 }
 
-void PrintMatrix(Digraph *dg)
+void ClearMatrix(Digraph *dg)
 {
-    /*打印邻接矩阵*/
-    for (int r = 0; r < MAXVER; r++)
-    {
-        for (int c = 0; c < MAXVER; c++)
-            printf("%-2d", dg->edges[r][c]);
-        putchar('\n');
-    }
+    /*将邻接矩阵全部置为0*/
+    for (int row = 0; row < MAXVER; row++)
+        for (int col = 0; col < MAXVER; col++)
+            if (dg->edges[row][col] == 1)
+                dg->edges[row][col] = 0;
 }
 
 int OutDegree(Digraph *dg, int verNo)
@@ -87,11 +85,13 @@ int InDegree(Digraph *dg, int verNo)
     return count;
 }
 
-void ClearMatrix(Digraph *dg)
+void PrintMatrix(Digraph *dg)
 {
-    /*将邻接矩阵全部置为0*/
-    for (int row = 0; row < MAXVER; row++)
-        for (int col = 0; col < MAXVER; col++)
-            if (dg->edges[row][col] == 1)
-                dg->edges[row][col] = 0;
+    /*打印邻接矩阵*/
+    for (int r = 0; r < MAXVER; r++)
+    {
+        for (int c = 0; c < MAXVER; c++)
+            printf("%-2d", dg->edges[r][c]);
+        putchar('\n');
+    }
 }
