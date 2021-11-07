@@ -35,12 +35,14 @@ bool CreateGraph(Digraph *dg)
             dg->edges[r][c] = 0;
 
     /*输入顶点并构造弧*/
-    printf("Please enter a set of vertices like 0,1: ");
+    printf("Please enter a set of tow vertices like 0,1: ");
     for (int i = 0; i < dg->arcs; i++)
     {
         scanf("%d,%d", &v1, &v2);
         if (dg->edges[v1][v2] == 0)
             dg->edges[v1][v2] = 1;
+        else
+            printf("Please re-enter the set of tow vertices");
         if (i != 9)
             printf("Enter the next group: ");
     }
@@ -53,8 +55,7 @@ void ClearMatrix(Digraph *dg)
     /*将邻接矩阵全部置为0*/
     for (int row = 0; row < MAXVER; row++)
         for (int col = 0; col < MAXVER; col++)
-            if (dg->edges[row][col] == 1)
-                dg->edges[row][col] = 0;
+            DeleteArc(dg, row, col);
 }
 
 int OutDegree(Digraph *dg, int verNo)
@@ -83,6 +84,31 @@ int InDegree(Digraph *dg, int verNo)
 
     /*返回当前顶点的入度*/
     return count;
+}
+
+bool IsArcExist(Digraph *dg, int tail, int head)
+{
+    if (dg->edges[tail][head])
+        return true;
+    return false;
+}
+
+bool AddArc(Digraph *dg, int tail, int head)
+{
+    if (IsArcExist(dg, tail, head))
+        return false;
+    dg->edges[tail][head] = 1;
+
+    return true;
+}
+
+bool DeleteArc(Digraph *dg, int tail, int head)
+{
+    if (!IsArcExist(dg, tail, head))
+        return false;
+    dg->edges[tail][head] = 0;
+
+    return true;
 }
 
 void PrintMatrix(Digraph *dg)
