@@ -11,9 +11,8 @@ int main(void)
     printf("The digraph has initialized.\n");
     printf("The martix of the digraph:\n");
     PrintMatrix(&dg);
-    od = OutDegree(&dg, 2);
-    id = InDegree(&dg, 2);
-    printf("Out degree:%d\nIn degree:%d\n", od, id);
-
+    ClearMatrix(&dg);
+    printf("After emptying the matrix:\n");
+    PrintMatrix(&dg);
     return 0;
 }
