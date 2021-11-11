@@ -9,7 +9,13 @@ int main(void)
 
     InitTree(&myTree);
     AddNode(&myTree, &myNode);
+    myNode = 0;
+    AddNode(&myTree, &myNode);
+    myNode = 2;
+    AddNode(&myTree, &myNode);
+    printf("%d\n", myTree->ltree->ndata);
     printf("%d\n", myTree->ndata);
+    printf("%d\n", myTree->rtree->ndata);
     DestoryTree(&myTree);
 
     return 0;
