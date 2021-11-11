@@ -33,10 +33,14 @@ void DeleteNode(TreeNode *node);
 /*操作：添加节点*/
 /*前置条件：*tree指向已初始化的二叉树，*data为待添加节点的数据*/
 /*后置条件：将tn指向的节点添加到*tree指向的二叉树中*/
+/*         添加成功返回true，否则返回false*/
 bool AddNode(BinaryTree *tree, NodeType *data);
 /*操作：插入节点*/
-/*前置条件：*tree指向已初始化的二叉树，tn指向待插入的节点*/
-/*后置条件：将tn指向的节点插入到*tree指向的二叉树中*/
+/*前置条件：*tree指向已初始化的二叉树，node指向待插入的节点*/
+/*后置条件：将node指向的节点插入到*tree指向的二叉树中*/
 void InsertNode(BinaryTree *tree, TreeNode *node);
-
+/*操作：查找节点*/
+/*前置条件：*tree指向已初始化的二叉树，*data指向待查找的节点数据*/
+/*后置条件：查找到*data指向的数据则返回true，否则返回false*/
+bool SearchNode(BinaryTree *tree, NodeType *data);
 #endif
