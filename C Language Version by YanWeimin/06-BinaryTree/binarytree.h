@@ -29,7 +29,11 @@ TreeNode *CreateNode(NodeType *data);
 /*操作：删除节点*/
 /*前置条件：node指向二叉树树中的节点*/
 /*后置条件：删除node指向的节点*/
-void DeleteNode(TreeNode *node);
+// void DeleteNode(TreeNode *node);
+/*操作：释放节点*/
+/*前置条件：node指向待释放的节点*/
+/*后置条件：释放node指向的节点*/
+void FreeNode(TreeNode *node);
 /*操作：添加节点*/
 /*前置条件：*tree指向已初始化的二叉树，*data为待添加节点的数据*/
 /*后置条件：将tn指向的节点添加到*tree指向的二叉树中*/
@@ -43,4 +47,24 @@ void InsertNode(BinaryTree *tree, TreeNode *node);
 /*前置条件：*tree指向已初始化的二叉树，*data指向待查找的节点数据*/
 /*后置条件：查找到*data指向的数据则返回true，否则返回false*/
 bool SearchNode(BinaryTree *tree, NodeType *data);
+/*操作：访问节点*/
+/*前置条件：node指向树中的节点，pfun指向作用于节点的函数*/
+/*后置条件：将pfun指向的函数作用于node指向的节点*/
+void VisitNode(TreeNode *node, void (*pfun)(TreeNode *pnode));
+/*操作：打印节点信息*/
+/*前置条件：node指向树中的节点*/
+/*后置条件：打印node指向的节点信息*/
+void PrintNodeData(TreeNode *node);
+/*操作：先序遍历*/
+/*前置条件：*tree指向已初始化的二叉树，pfun指向遍历函数*/
+/*后置条件：将pfun指向的函数作用于树中的节点*/
+void PreOrder(BinaryTree *tree, void (*pfun)(TreeNode *pnode));
+/*操作：中序遍历*/
+/*前置条件：*tree指向已初始化的二叉树，pfun指向遍历函数*/
+/*后置条件：将pfun指向的函数作用于树中的节点*/
+void InOrder(BinaryTree *tree, void (*pfun)(TreeNode *pnode));
+/*操作：后序遍历*/
+/*前置条件：*tree指向已初始化的二叉树，pfun指向遍历函数*/
+/*后置条件：将pfun指向的函数作用于树中的节点*/
+void PostOrder(BinaryTree *tree, void (*pfun)(TreeNode *pnode));
 #endif
