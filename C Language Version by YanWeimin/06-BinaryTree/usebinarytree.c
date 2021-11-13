@@ -1,27 +1,29 @@
+/*使用二叉树*/
 #include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
 #include "binarytree.h"
 
 int main(void)
 {
-    BinaryTree myTree;
-    NodeType nodes[10] = {10, 5, 6, 9, 11, 2, 0, 1, 4, 3};
-    
-    InitTree(&myTree);//初始化二叉树
-    
-    for (int i = 0; i < 10; i++)//插入节点
+    BinaryTree myTree;                                            //声明二叉树
+    NodeType nodes[11] = {10, 0, 2, 4, 6, 8, 12, 14, 16, 18, 20}; //初始化节点数据数组
+    NodeType myNode = 10;
+    /*初始化二叉树*/
+    InitTree(&myTree);
+
+    /*插入节点*/
+    for (int i = 0; i < 11; i++)
         AddNode(&myTree, &nodes[i]);
-    
-    /*先序、中序、后序遍历*/
-    PreOrder(&myTree, PrintNodeData);
+
+    /*中序遍历二叉树*/
+    InOrder(&myTree, PrintNodeData);
+
+    /*删除节点并中序遍历二叉树*/
+    DeleteNode(&myTree, &myNode);
     putchar('\n');
     InOrder(&myTree, PrintNodeData);
-    putchar('\n');
-    PostOrder(&myTree, PrintNodeData);
-    putchar('\n');
 
-    DestoryTree(&myTree);//销毁二叉树
+    /*销毁二叉树*/
+    DestoryTree(&myTree);
 
     return 0;
 }
