@@ -3,10 +3,10 @@
 #include "digraph.h"
 
 /*函数定义*/
-bool InitAdjList(AdjList * adj)
+bool InitAdjList(AdjList *adj)
 {
     int ask_vers, ask_arcs;
-    
+
     /*输入顶点数和弧数*/
     printf("Please enter the count of vertexs and ars \
 (Separated by blank): ");
@@ -19,7 +19,7 @@ bool InitAdjList(AdjList * adj)
     /*清理输入行*/
     while (getchar() != '\n')
         continue;
-    
+
     /*为顶点链表分配内存*/
     adj->verlist = (VertexNode *)malloc(adj->vers * sizeof(VertexNode));
 
@@ -48,10 +48,9 @@ bool InitAdjList(AdjList * adj)
 
 bool FillAdjList(AdjList *adj)
 {
-    ArcNode * newarc, temp;
+    ArcNode *newarc, *temp;
     Ver head, tail, verpos = -1;
     int count = adj->arcs;
-    
 
     /*完善弧节点表*/
     while (count--)
@@ -66,14 +65,31 @@ bool FillAdjList(AdjList *adj)
             /*清理输入行*/
             while (getchar() != '\n')
                 continue;
-            
+
             /*定位顶点索引*/
             verpos = LocateVertex(adj, &tail);
+            printf("Vertex not exist.\n");
         }
 
-        
-    }
+        /*为弧节点分配内存并初始化*/
+        newarc = (ArcNode *)malloc(sizeof(ArcNode));
+        newarc->archead = head;
+        newarc->nextarc = NULL;
 
+        /*将弧节点插入邻接表*/
+        temp = adj->verlist[verpos].firstarc;
+        if (temp == NULL) //第一条弧
+            adj->verlist[verpos].firstarc = newarc;
+        else //寻找插入位置
+        {
+            while (temp->nextarc != NULL)
+                temp = temp->nextarc;
+            temp->nextarc = newarc;
+        }
+
+        /*重置定点索引*/
+        verpos = -1;
+    }
 
     /*完善成功*/
     return true;
