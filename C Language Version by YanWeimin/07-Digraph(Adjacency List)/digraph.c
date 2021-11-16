@@ -5,6 +5,12 @@
 /*函数定义*/
 bool InitAdjList(AdjList *adj)
 {
+    /*初始化顶点顺序表以及各顶点的弧顶点链表*/
+    if (!InitVerList(adj) || !InitArcList(adj))
+        return false; //初始化失败
+
+    /*初始化成功*/
+    return true;
 }
 
 static bool InitVerList(AdjList *adj)
@@ -31,20 +37,27 @@ static bool InitVerList(AdjList *adj)
     return true;
 }
 
-/*重点*/
 static bool InitArcList(AdjList *adj)
 {
     Ver arctail, archead;
-    int verpos = -1, arccount = adj->arcs;
+    int verpos, arccount = adj->arcs;
 
     /*插入弧节点*/
     while (arccount--)
     {
-        /*调用GetArc()输入弧头弧尾*/
-        /*调用LocateVertex()弧尾顶点不存在则重新输入*/
-        /*调用AddArc()插入*/
-        /*插入失败返回false*/
-        /*插入成功返回true*/
+        /*获取弧尾和弧头顶点*/
+        while (true)
+        {
+            GetArc(&arctail, &archead);
+            verpos = LocateVertex(adj, &arctail);
+            if (verpos >= 0)
+                break;
+            printf("Vertex %c not exist. Please re-enter.\n", arctail);
+        }
+
+        /*新建弧节点并插入到邻接表中*/
+        if (!AddArc(adj, &arctail, &archead))
+            return false;
     }
 
     /*初始化成功*/
