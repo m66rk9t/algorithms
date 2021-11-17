@@ -16,9 +16,9 @@
 
 01 设计一个顺序查找的递归算法，对应的递归模型如下：
 
-+ f(R, n, k, i) = -1                如果i >= n
-+ f(R, n, k, i) = i                 如果R[i].key = k
-+ f(R, n, k, i) = f(R, n, k, i+1)   其他情况
++ f(R, n, k, i) = -1(当i >= n)
++ f(R, n, k, i) = i(当R[i].key = k)
++ f(R, n, k, i) = f(R, n, k, i+1)(其他情况)
 
 ```c
 /*初次调用该函数时，i = 0*/
@@ -41,10 +41,10 @@ int SqeSearch(SeqList R, int n, KeyType k, int i)
 
 03 设计一个折半查找的递归算法，对应的递归模型如下：
 
-+ f(R, low, high, k) = -1                                                   low > high
-+ f(R, low, high, k) = mid (mid = (low + high) / 2)                         R[mid].key = k
-+ f(R, low, high, k) = f(R, low, mid - 1, k) mid (mid = (low + high) / 2)   k < R[mid].key
-+ f(R, low, high, k) = f(R, mid + 1, high, k) mid (mid = (low + high) / 2)  k > R[mid].key
++ f(R, low, high, k) = -1(当low > high)
++ f(R, low, high, k) = mid (mid = (low + high) / 2)(当R[mid].key = k)
++ f(R, low, high, k) = f(R, low, mid - 1, k) mid (mid = (low + high) / 2)(当k < R[mid].key)
++ f(R, low, high, k) = f(R, mid + 1, high, k) mid (mid = (low + high) / 2)(当k > R[mid].key)
 
 ```c
 /*初次调用该函数时，low = 0，high = n - 1*/
@@ -63,6 +63,51 @@ int BinSearch(SeqList R, int low, int high, KeyType k)
     }
 
     return -1;
+}
+```
+
+04 设计一个算法，利用折半查找在一个有序表中插入一个关键字为x的元素并保持表的有序性。思路是先使用折半查找在R中找到插入位置，然后将该位置后的所有元素后移一位，再将该位置插入关键字为x的记录。
+
+```c
+void BinInsert(SeqList R, int n, KeyType x)
+{
+    int low = 0, high = n - 1, mid, i;
+
+    while (low <= high)
+    {
+        mid = (low + high) / 2;
+        if (R[mid].key > x)
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+
+    for (i = n - 1; i >= high; i--)
+        R[i + 1] = R[i];
+
+    R[high + 1].key = x;
+}
+```
+
+05 有一关键字为整数且均不相同的序列R[0...n - 1]，假设关键字递增有序排列，设计一个高效算法判断是否存在某一整数i，恰好存在于R[i]中。
+
+```c
+int BinFind(SeqList R, int n)
+{
+    int low = 0, high = n - 1, mid;
+
+    while (low <= high)
+    {
+        mid = (low + high) / 2;
+        if (R[mid].key == mid)
+            return 1;
+        else if (R[mid].key > mid)
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+
+    return 0;
 }
 ```
 
