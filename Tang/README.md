@@ -1,6 +1,6 @@
-## 数据结构（C语言版）-汤文学课后作业
+# 数据结构（C语言版）-汤文学课后作业
 
-#### 01 有两个线性表，编写实现La-Lb以及La∩Lb的函数。
+## 01 有两个线性表，编写实现La-Lb以及La∩Lb的函数。
 
 ```c
 void Subtraction(List *La, List *Lb, List *Lc)
@@ -34,7 +34,7 @@ void Intersection(List *La, List *Lb, List *Lc)
 }
 ```
 
-#### 02 设元素为1，2，3，4，5。进栈顺序约定：值小的元素先进栈，但在两次进栈之间，可做出栈运算。写出5种可以得到的出栈序列和5中不可以得到的出栈序列。
+## 02 设元素为1，2，3，4，5。进栈顺序约定：值小的元素先进栈，但在两次进栈之间，可做出栈运算。写出5种可以得到的出栈序列和5中不可以得到的出栈序列。
 
 ```
 （1）5种合法的出栈序列：
@@ -51,7 +51,7 @@ void Intersection(List *La, List *Lb, List *Lc)
 ⑤（4，2，1，3，5），同④。
 ```
 
-#### 03 设单链表：H→x→y→x，H→x→y→z→y→x为对称形式（表长=n）。使用栈操作，写出判断表H是否对称的算法：xyz(H)。
+## 03 设单链表：H→x→y→x，H→x→y→z→y→x为对称形式（表长=n）。使用栈操作，写出判断表H是否对称的算法：xyz(H)。
 
 ```c
 bool xyz(LinkedList *H)
@@ -89,7 +89,7 @@ bool xyz(LinkedList *H)
 }
 ```
 
-#### 04 FORTRAN语言中，数组元素按列优先存储，设每个元素占L个单元，首元素的地址为b，如有以下三个数组，试分别确定三个数组中某一元素的地址：`LOC(A[i])`，`LOC(A[i][j])`，`LOC(A[i][j][k])`。
+## 04 FORTRAN语言中，数组元素按列优先存储，设每个元素占L个单元，首元素的地址为b，如有以下三个数组，试分别确定三个数组中某一元素的地址：`LOC(A[i])`，`LOC(A[i][j])`，`LOC(A[i][j][k])`。
 
 + `A[n] = (A[1]...A[n])`
 + `A[m][n](m行n列)`
@@ -101,7 +101,7 @@ LOC(A[i][j]) = b + (j * n + i) * L
 LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L 
 ```
 
-#### 05 设矩阵 
+## 05 设矩阵 
 
 <img src="https://latex.codecogs.com/svg.image?A=\begin{Bmatrix}1&0&0&0&2\\0&3&0&0&4\\0&0&0&5&0\\0&0&0&6&0\\0&0&0&0&7\\\end{Bmatrix}(1<=i,j<=5)" title="A=\begin{Bmatrix}1&0&0&0&2\\0&3&0&0&4\\0&0&0&5&0\\0&0&0&6&0\\0&0&0&0&7\\\end{Bmatrix}(1<=i,j<=5)" />
 
@@ -117,7 +117,7 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/03.png)
 
-#### 06 设银行一天营业业务表头H：
+## 06 设银行一天营业业务表头H：
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/04.png)
 
@@ -139,7 +139,7 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0502.png)
 
-#### 07 已知二叉树BT如下：
+## 07 已知二叉树BT如下：
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0601.png)
 
@@ -160,7 +160,7 @@ LRD(后序遍历):(52, 42, 15, 81, 36, 21, 88, 31, 45, 63, 74, 52)
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0604.png)
 
-#### 08 若后序线索二叉树中某p节点存在右子树，写出求p之右子树在后序下第一节点指针的算法（实线为指针，虚线为线索）
+## 08 若后序线索二叉树中某p节点存在右子树，写出求p之右子树在后序下第一节点指针的算法（实线为指针，虚线为线索）
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/07.png)
 
@@ -181,7 +181,7 @@ BTptr GetLRDFirst(BTptr p)
 ```
 
 
-#### 09 设某二叉树的先、中、后序遍历序列为以下结果，请根据此画出二叉树的逻辑结构。
+## 09 设某二叉树的先、中、后序遍历序列为以下结果，请根据此画出二叉树的逻辑结构。
 
 ```
 DLR:(A,B,C,D,E,F,G,H)
@@ -190,7 +190,7 @@ LDR:(B,D,C,A,E,G,F,H)
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/08.png)
 
-#### 10 二位数组A的元素都是3个字符组成的串。行下标i的范围从1到18，列下标j的范围从1到10。从首地址SA开始连续存放在存储器内。当该数组按行优先方式存储时，元素`A[8,5]`的起始地址是多少？
+## 10 二位数组A的元素都是3个字符组成的串。行下标i的范围从1到18，列下标j的范围从1到10。从首地址SA开始连续存放在存储器内。当该数组按行优先方式存储时，元素`A[8,5]`的起始地址是多少？
 
 ```
 由题可知：
@@ -205,7 +205,7 @@ LOC(A[8,5]) = SA + [(8 - 1) X 10 + (5 - 1)] X 3
 即A[8,5]的起始地址为SA+222。
 ```
 
-#### 11 森林与二叉树的转换。
+## 11 森林与二叉树的转换。
 + 将如下的森林F = {T1, T2, T3}转换成二叉树BT。
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0901.png)
@@ -214,7 +214,7 @@ LOC(A[8,5]) = SA + [(8 - 1) X 10 + (5 - 1)] X 3
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/0902.png)
 
-#### 12 设加权集合W = {7, 19, 2, 6, 32, 3, 21, 10}，试构造关于W的一个Huffman树，并求该树的WPL。
+## 12 设加权集合W = {7, 19, 2, 6, 32, 3, 21, 10}，试构造关于W的一个Huffman树，并求该树的WPL。
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/10.png)
 
@@ -225,11 +225,11 @@ WPL = 19 * 2 + 21 * 2 + 2 * 5 + 3 * 5 + 6 * 4 + 7 * 4 + 10 * 4 + 32 * 2
 该树的WPL为261。
 ```
 
-#### 13 设有向图G1，试构造G1的邻接矩阵、邻接表和十字链表结构。
+## 13 设有向图G1，试构造G1的邻接矩阵、邻接表和十字链表结构。
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/11.png)
 
-#### 14 设无向图G2，写出从顶点V0出发，按DFS和BFS方法遍历G2所得到的顶点序列。
+## 14 设无向图G2，写出从顶点V0出发，按DFS和BFS方法遍历G2所得到的顶点序列。
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/12.png)
 
@@ -238,14 +238,14 @@ DFS = (V0, V1, V3, V7, V4, V5, V2, V6)
 BFS = (V0, V1, V4, V2, V3, V7, V5, V6)
 ```
 
-#### 15 设无向网G3，画出从顶点a出发，按Prim算法产生的一颗最小生成树。
+## 15 设无向网G3，画出从顶点a出发，按Prim算法产生的一颗最小生成树。
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/13.png)
 
-#### 16 设有向网G4，用Floyd算法求出G4中任意两点间最短路径长度的矩阵，即：D<sub>-1</sub>, D<sub>0</sub>, D<sub>1</sub>, D<sub>2</sub>, D<sub>3</sub>, D<sub>4</sub>, D<sub>5</sub>, = ?。
+## 16 设有向网G4，用Floyd算法求出G4中任意两点间最短路径长度的矩阵，即：D<sub>-1</sub>, D<sub>0</sub>, D<sub>1</sub>, D<sub>2</sub>, D<sub>3</sub>, D<sub>4</sub>, D<sub>5</sub>, = ?。
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/14.png)
 
-#### 17 设有向图G5，写出G5的所有拓扑序列。
+## 17 设有向图G5，写出G5的所有拓扑序列。
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/15.png)
