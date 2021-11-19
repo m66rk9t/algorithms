@@ -249,3 +249,9 @@ BFS = (V0, V1, V4, V2, V3, V7, V5, V6)
 ## 17 设有向图G5，写出G5的所有拓扑序列。
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/15.png)
+
+```
+(A, E, B, C, F, D)
+(A, E, B, F, C, D)
+(A, E, F, B, C, D)
+```
