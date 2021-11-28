@@ -107,7 +107,7 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 + 若将A视为一个上三角矩阵时，请画出A的按行优先存储的压缩存储表S，并写出A中元素`A[i][j]`与S中元素`S[k]`之间的关系。
 
-![image](http://www.m66rk9t.site/wp-content/uploads/2021/11/01.png)
+![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/01.png)
 
 `k = (i-1)(10-i)/2 + j (i<=j&&i>=1&&i<=5&&j>=1&&j<=5)`
 
