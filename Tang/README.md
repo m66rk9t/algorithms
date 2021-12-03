@@ -121,7 +121,7 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 
 ![image](https://github.com/m66rk9t/datastructure/blob/main/Pics/04.png)
 
-+ 试用广义表形式表示H，并用`Gethead()`和`Gettail()`函数提取d2。
++ 试用广义表形式表示H，并用`GetHead()`和`GetTail()`函数提取d2。
 
 ```
 广义表形式表示H：
@@ -129,8 +129,8 @@ LOC(A[i][j][k]) = b + (j * m * p + k * m + i) * L
 可得H = ((a1, (d1, d2, d3), a3), (b1, b2, b3), X)
 
 取表H中的d2：
-由Gethead((d2, d3)) = d2, Gettail(D) = (d2, d3), Gethead((D, a3)) = D, Gettail(A) = (D, a3), Gethead(H) = A
-可得Gethead(Gettail(Gethead(Gettail(Gethead(H))))) = d2
+由GetHead((d2, d3)) = d2, GetTail(D) = (d2, d3), GetHead((D, a3)) = D, GetTail(A) = (D, a3), GetHead(H) = A
+可得GetHead(GetTail(GetHead(GetTail(GetHead(H))))) = d2
 ```
 
 + 画出表H的单链以及双链结构。
