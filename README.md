@@ -1,1 +1,5 @@
-## 数据结构
+# Algorithms and Data Structures
+
+## Statement
+
+This repository contains some algorithm and data structur exercises from many books.
